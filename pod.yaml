@@ -16,8 +16,10 @@ spec:
       - name: https
         protocol: TCP
         containerPort: 443
-    # volumeMounts:
-    #   - name: 
+    volumeMounts:
+      - name: aspnetapp-volume
+        mountPath: /app/aspnetapp.conf
+        subPath: aspnetapp.conf
     env:
       - name: TEST_ENV_VAR
         value: test_env_var_value
@@ -29,7 +31,7 @@ spec:
     envFrom:
       - configMapRef:
           name: aspnetapp-config
-  # volumes:
-  #   - name: aspnetapp-volume
-  #     configMap:
-  #       name: aspnetapp-config
+  volumes:
+    - name: aspnetapp-volume
+      configMap:
+        name: aspnetapp-config3

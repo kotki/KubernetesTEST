@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aspnetapp-config3
+data:
+  aspnetapp.conf: |-
+    { "TEST_ENV_VAR_FROM_CONFIG-MAP3":"test_env_var_from_config-map_value3" }

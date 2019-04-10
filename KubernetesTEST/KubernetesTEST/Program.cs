@@ -19,6 +19,13 @@ namespace KubernetesTEST
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((hostingContext, config) =>
+                {
+                    config.AddJsonFile("aspnetapp.json", optional: true, reloadOnChange: true);
+                    config.AddJsonFile("aspnetapp.conf", optional: true, reloadOnChange: true);
+                    config.AddJsonFile("aspnetapp2.json", optional: true, reloadOnChange: true);
+                    config.AddJsonFile("aspnetapp2.conf", optional: true, reloadOnChange: true);
+                })
                 .UseStartup<Startup>();
     }
 }
