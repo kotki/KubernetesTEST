@@ -20,6 +20,9 @@ spec:
       - name: aspnetapp-volume
         mountPath: /app/aspnetapp.conf
         subPath: aspnetapp.conf
+      # - name: aspnetapp-volume2
+      #   mountPath: /app/aspnetapp2.conf
+      #   subPath: aspnetapp2.conf
     env:
       - name: TEST_ENV_VAR
         value: test_env_var_value
@@ -35,3 +38,7 @@ spec:
     - name: aspnetapp-volume
       configMap:
         name: aspnetapp-config3
+    # - name: aspnetapp-volume2
+    #   hostPath:
+    #     path: aspnetapp2.conf
+    #     type: File
