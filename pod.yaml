@@ -9,22 +9,6 @@ spec:
   - name: aspnetapp
     image: aspnetapp
     imagePullPolicy: Never
-    # livenessProbe:
-    #   httpGet:
-    #     path: /healthz
-    #     port: 8080
-    #   initialDelaySeconds: 3
-    #   periodSeconds: 3
-    # readinessProbe:
-    #   httpGet:
-    #     path: /healthz
-    #     port: 8080
-    #   initialDelaySeconds: 3
-    #   periodSeconds: 3
-    # resources:
-    #   limits:
-    #     memory: "128Mi"
-    #     cpu: "500m"
     ports:
       - protocol: TCP
         containerPort: 80
