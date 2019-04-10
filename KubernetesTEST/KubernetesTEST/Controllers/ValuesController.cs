@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 
 namespace KubernetesTEST.Controllers
 {
@@ -10,36 +9,32 @@ namespace KubernetesTEST.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET api/values
+        private readonly IConfiguration _config;
+
+        public ValuesController(IConfiguration config)
+        {
+            _config = config;
+        }
+
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return "Hello";
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        [HttpGet]
+        [Route("env")]
+        public ActionResult<List<KeyValuePair<string, string>>> GetEnvs()
         {
-            return "value";
+            var result = _config.AsEnumerable().ToList();
+            return result;
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpGet("env/{key}")]
+        public ActionResult<string> GetEnv(string key)
         {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var result = _config.GetValue<string>(key);
+            return result;
         }
     }
 }

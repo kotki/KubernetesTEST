@@ -10,9 +10,26 @@ spec:
     image: aspnetapp
     imagePullPolicy: Never
     ports:
-      - protocol: TCP
+      - name: http
+        protocol: TCP
         containerPort: 80
-        name: first
-      - protocol: TCP
+      - name: https
+        protocol: TCP
         containerPort: 443
-        name: second
+    # volumeMounts:
+    #   - name: 
+    env:
+      - name: TEST_ENV_VAR
+        value: test_env_var_value
+      - name: TEST_ENV_VAR_FROM_CONFIG-MAP2
+        valueFrom:
+          configMapKeyRef:
+            name: aspnetapp-config2
+            key: TEST_ENV_VAR_FROM_CONFIG-MAP2
+    envFrom:
+      - configMapRef:
+          name: aspnetapp-config
+  # volumes:
+  #   - name: aspnetapp-volume
+  #     configMap:
+  #       name: aspnetapp-config
