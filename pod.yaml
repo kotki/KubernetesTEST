@@ -41,4 +41,3 @@ spec:
     # - name: aspnetapp-volume2
     #   hostPath:
     #     path: aspnetapp2.conf
-    #     type: File
