@@ -17,4 +17,5 @@ RUN dotnet publish "KubernetesTEST2.csproj" -c Release -o /app
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
+ENV ASPNETCORE_URLS http://*:5123
 ENTRYPOINT ["dotnet", "KubernetesTEST2.dll"]
