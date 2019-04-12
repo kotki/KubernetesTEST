@@ -5,10 +5,10 @@ EXPOSE 443
 
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
-COPY ["KubernetesTEST2/KubernetesTEST2.csproj", "KubernetesTEST2/"]
-RUN dotnet restore "KubernetesTEST2/KubernetesTEST2.csproj"
+COPY ["KubernetesTEST2.csproj", "."]
+RUN dotnet restore "./KubernetesTEST2.csproj"
 COPY . .
-WORKDIR "/src/KubernetesTEST2"
+#WORKDIR "/src/KubernetesTEST2"
 RUN dotnet build "KubernetesTEST2.csproj" -c Release -o /app
 
 FROM build AS publish

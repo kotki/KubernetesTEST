@@ -42,11 +42,11 @@ namespace KubernetesTEST.Controllers
             return result;
         }
 
-        [HttpGet("")]
+        [HttpGet("result")]
         public async Task<ActionResult<string>> GetResult(string address)
         {
             //string result = null;
-
+            
             //if (string.IsNullOrWhiteSpace(address))
             //{
             //    result = "Nowhere to go!";
