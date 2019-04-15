@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KubernetesTEST", "Kubernete
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubernetesTEST2", "KubernetesTEST2\KubernetesTEST2.csproj", "{2DFFD7FD-8F26-44F0-8861-D0698B7D25B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubernetesTEST3", "KubernetesTEST3\KubernetesTEST3.csproj", "{B7920710-8AA1-40C3-BB3F-66CC84E099A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2DFFD7FD-8F26-44F0-8861-D0698B7D25B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DFFD7FD-8F26-44F0-8861-D0698B7D25B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DFFD7FD-8F26-44F0-8861-D0698B7D25B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7920710-8AA1-40C3-BB3F-66CC84E099A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7920710-8AA1-40C3-BB3F-66CC84E099A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7920710-8AA1-40C3-BB3F-66CC84E099A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7920710-8AA1-40C3-BB3F-66CC84E099A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
