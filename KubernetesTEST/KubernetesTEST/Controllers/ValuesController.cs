@@ -43,7 +43,7 @@ namespace KubernetesTEST.Controllers
         }
 
         [HttpGet("result")]
-        public async Task<ActionResult<string>> GetResult(string address)
+        public async Task<ActionResult<string>> GetResult(string address, string hostHeader)
         {
             //string result = null;
             
@@ -87,7 +87,7 @@ namespace KubernetesTEST.Controllers
                 else
                 {
                     var request = new HttpRequestMessage(HttpMethod.Get, address);
-                    request.Headers.Add("Host", "neverssl.com");
+                    request.Headers.Add("Host", hostHeader);
                     var response = await client.SendAsync(request);
 
                     if (response.IsSuccessStatusCode)
