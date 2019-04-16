@@ -4,4 +4,4 @@ metadata:
   name: my-service
 spec:
     type: ExternalName
-    externalName: http://shaurman.com.ua/
+    externalName: shaurman.com.ua
