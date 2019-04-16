@@ -87,6 +87,7 @@ namespace KubernetesTEST.Controllers
                 else
                 {
                     var request = new HttpRequestMessage(HttpMethod.Get, address);
+                    request.Headers.Add("Host", "neverssl.com");
                     var response = await client.SendAsync(request);
 
                     if (response.IsSuccessStatusCode)
@@ -95,7 +96,7 @@ namespace KubernetesTEST.Controllers
                     }
                     else
                     {
-                        result = "Something went wrong with response!";
+                        result = $"Something went wrong with response! Code: {response.StatusCode} {response.ReasonPhrase} {response.RequestMessage} {response.Headers}";
                     }
                 }
             }
