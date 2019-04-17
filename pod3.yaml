@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aspnetapp4
+  labels:
+    app: aspnetapp4
+spec:
+  containers:
+  - name: web4
+    image: aspnetapp4
+    imagePullPolicy: Never
+    ports:
+      - name: http
+        protocol: TCP
+        containerPort: 80
+      # - name: https
+      #   protocol: TCP
+      #   containerPort: 443
+
+# get logs of the container
+# kubectl logs pod/aspnetapp -c web1
